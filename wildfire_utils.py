@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import folium
 from folium.plugins import MarkerCluster
-from folium.plugins import HeatMap
+from folium.plugins import HeatMaps
 import branca.colormap as cm
 import matplotlib.patches as mpatches
 
