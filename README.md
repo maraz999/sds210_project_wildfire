@@ -20,8 +20,7 @@ Where are the most intense wildfires in Madagascar, and does the brightness temp
 -Ecoregions 2017 | from a peer student Moritz .... that did his bachelor thesis on Madagascar | 'data/data/ne_10m_admin_0_countries/'
 
 ## Project Structure
-'''
-.
+'''.
 ├── environment.yml                  # conda environement
 ├── notebooks
 │   ├── 01_wildfire_project.ipynb    # main analysis
