@@ -83,7 +83,7 @@ def prepare_fires(fires_gdf, madagascar, ecoregions):
         biome,geometry
     """
     
-    ##spatial join
+    ## Spatial Join
     fires= gpd.sjoin(
         fires_gdf,
         madagascar[['geometry', 'NAME']],
@@ -92,20 +92,20 @@ def prepare_fires(fires_gdf, madagascar, ecoregions):
         #point must be fully inside the polygon
         predicate='within') 
 
-    ##clean data
+    ## Clean Data
     print()
     print(fires.isnull().sum())
     
     fires = fires.dropna()
     
-    ##derived variables
+    ## Derived Variables
     
-    #temperature difference
-    # ti4 = flame temperature, ti5 = background surface temperature
-    # temp_diff = how much hotter the fire is compared to its sorroundings 
+    # ΔT = Ti4 - Ti 5
+    # Ti4 = fire brightness temperature (flame) , Ti5 = background land surface temperature
+    # ΔT = temp_diff = how much hotter the fire is compared to its sorroundings (K)
     fires['temp_diff'] = fires['bright_ti4']- fires['bright_ti5']
 
-    #date + time into single column for datetime analysis
+    # date + time into single column for datetime analysis
     fires['acq_time'] = fires['acq_time'].astype(str).str.zfill(4) #zfill: "0954"
     
     fires['datetime'] = pd.to_datetime( 
@@ -114,7 +114,7 @@ def prepare_fires(fires_gdf, madagascar, ecoregions):
     fires['acq_time'].str[2:], # last 2 minutes
     format='%Y-%m-%d %H:%M')
 
-    #ecoregion subdivision
+    # Ecoregion subdivision
     fires = gpd.sjoin(
         #drop leftover of first join
         fires.drop(columns =['index_right'], errors=['ignore']),
@@ -127,7 +127,7 @@ def prepare_fires(fires_gdf, madagascar, ecoregions):
     fires = fires.rename(columns={'ECO_NAME': 'ecoregion', 'BIOME_NAME': 'biome'})
     fires['ecoregion'] = fires['ecoregion'].fillna('Unknown')
 
-    #keep only relevant columns
+    # keep only relevant columns
     fires = fires[[
         'latitude', 'longitude',
         'temp_diff', 'bright_ti4', 'bright_ti5',
