@@ -37,10 +37,10 @@ Where are the most intense wildfires in Madagascar, and does the brightness temp
 ## How to Run
 1. Clone Repertory
 2. Recreate enveronement
-   ```bash
+```bash
    conda env create -f environment.yml
    conda activate sds-env
-  ```
+```
 3. Download data
   - Natural Earth to get country boundaries : https://www.naturalearthdata.com/downloads/
   - Ecoregions: https://ecoregions.appspot.com
