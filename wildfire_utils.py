@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import folium
 from folium.plugins import MarkerCluster
-from folium.plugins import HeatMaps
+from folium.plugins import HeatMap
 import branca.colormap as cm
 import matplotlib.patches as mpatches
 
@@ -114,6 +114,9 @@ def prepare_fires(fires_gdf, madagascar, ecoregions):
     fires['acq_time'].str[2:], # last 2 minutes
     format='%Y-%m-%d %H:%M')
 
+    # data Ecoregion
+    ecoregions.head(7)
+    
     # Ecoregion subdivision
     fires = gpd.sjoin(
         #drop leftover of first join
@@ -287,6 +290,19 @@ def build_map(fires_madagascar, madagascar, ecoregions):
 
     #ecoregions polyfons layer 0
     fg_eco = folium.FeatureGroup(name = "Ecoregions", show=True).add_to(m)
+    
+    eco_counts = fires_madagascar['ecoregion'].value_counts().to_dict()
+    
+    eco_colors = {
+        'Madagascar dry deciduous forests': '#6b8e23 ', #c0ff3e
+        'Madagascar ericoid thickets': '#8b6969',
+        'Madagascar humid forests': '#006400',
+        'Madagascar mangroves': '#E600AA',
+        'Madagascar spiny thickets':'#b8860b',
+        'Madagascar subhumid forests':'#66cd00', 
+        'Madagascar succulent woodlands':'#8b5a00',
+    }
+    
     legend_html= """
     <div style="
         position: fixed;
@@ -301,30 +317,34 @@ def build_map(fires_madagascar, madagascar, ecoregions):
         line-height: 1.8;
 ">
 <b style="font-size:13px;">Ecoregions</b><br>
+<span style="color:#888; font-size:11px;">color | fire detections</span><br>
 """
     
     for _, row in ecoregions.iterrows():
+        color = eco_colors.get(row['ECO_NAME'])
+        count = eco_counts.get(row['ECO_NAME'])
         #legend entry
         legend_html+=(
             f'<span style="'
-            f'background:{row["COLOR_BIO"]};'
+            f'background:{color};'
             f'display:inline-block;'
             f'width:12px; height:12px;'
             f'margin-right:6px;'
             f'border:1px solid #aaa;'
             f'vertical-align:middle;'
             f'"></span>'
-            f'{row["ECO_NAME"]}<br>'
+            f'{row["ECO_NAME"]}'
+            f'<span style="color:#555; margin-left:6px;">({count})</span><br>'
         )
         #add polygon
         folium.GeoJson(
             row['geometry'].__geo_interface__,
-            style_function = lambda feature, color= row['COLOR_BIO']: {
-                'fillColor' : color,
+            style_function = lambda feature, c = color: {
+                'fillColor' : c,
                 'color':'white',
                 'weight':1.5,
                 'fillOpacity': 0.6,
-            },
+            }                                          
         ).add_to(fg_eco)
     
     ##Colormap: color = temp_diff
