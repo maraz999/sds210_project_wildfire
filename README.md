@@ -1,8 +1,15 @@
 # MADAGASCAR WILDFIRE INTENSITY ANALYSIS
-Analyzing active fire detections from NASA FIRMS VIIRS satellite to explore where the most intense wildfires occur across the island's 7 ecoregions and using brightness temperature difference and Fire Radiative Power (FRP)
+Analyzing active fire detections from NASA FIRMS VIIRS satellite to explore where the most intense wildfires occur across the island's 7 ecoregions and using brightness temperature difference (ΔT) and Fire Radiative Power (FRP).
 
 ## Research Question
-Where are the most intense wildfires in Madagascar, and does the brightness temperature difference (ΔT = Ti5 - Ti4) together with FRP intensity reveal spatial distribution in fire behaviour?
+Where are the most intense wildfires in Madagascar, and does the brightness temperature difference together with FRP intensity reveal spatial distribution in fire behaviour?
+
+## Key Variables
+#Variable | Meaning
+- FRP (MW) | Fire Radiative Power: total energy (power) released by the fire
+- ΔT (K) | Ti4 - Ti5: how much hotter the fire is compared to its sorrounding land surface
+- Ti 4 | VIIRS band I4: fire brightness temperature
+- Ti5 | VIIRS band I5: background land surface temperature
 
 ## Data Sources
 #Dataset | Source | Path  
@@ -26,3 +33,13 @@ Where are the most intense wildfires in Madagascar, and does the brightness temp
 ├── README.md
 └── wildfire_utils.py                # reusable functions
 '''
+
+## How to Run
+1. Clone Repertory
+2. Recreate enveronement
+   ```bash
+   conda env create -f environment.yml
+   conda activate sds-env
+  ```
+3. Download data
+  - 
