@@ -17,7 +17,7 @@ Where are the most intense wildfires in Madagascar, and does the brightness temp
 
 -Country boundaries | [Natural Earth] https://www.naturalearthdata.com/downloads/ | 'data/ne_10m_admin_0_countries/'
 
--Ecoregions 2017 | from a pier student that did his bachelor thesis on Madagascar | 'data/data/ne_10m_admin_0_countries/'
+-Ecoregions 2017 | from a peer student that did his bachelor thesis on Madagascar | 'data/data/ne_10m_admin_0_countries/'
 
 ## Project Structure
 '''
@@ -41,5 +41,11 @@ Where are the most intense wildfires in Madagascar, and does the brightness temp
    conda env create -f environment.yml
    conda activate sds-env
   ```
+
 3. Download data
-  - 
+  - Natural Earth to get country boundaries : https://www.naturalearthdata.com/downloads/
+  - Ecoregions: https://ecoregions.appspot.com
+4. Get a NASA FIRMS API key: https://firms.modaps.eosdis.nasa.gov/
+5. Add your key to an '.env' file in project root for safety
+
+
