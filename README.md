@@ -13,11 +13,11 @@ Where are the most intense wildfires in Madagascar, and does the brightness temp
 
 ## Data Sources
 #Dataset | Source | Path  
--Active fire detection from last 2 days (VIIRS SNPP NRT)| [NASA FIRMS API] https://firms.modaps.eosdis.nasa.gov/ | fetched via API
+-Active fire detection from last 2 days (VIIRS SNPP NRT)| [NASA FIRMS API]| fetched via API
 
--Country boundaries | [Natural Earth] https://www.naturalearthdata.com/downloads/ | 'data/ne_10m_admin_0_countries/'
+-Country boundaries | [Natural Earth]| 'data/ne_10m_admin_0_countries/'
 
--Ecoregions 2017 | from a peer student that did his bachelor thesis on Madagascar | 'data/data/ne_10m_admin_0_countries/'
+-Ecoregions 2017 | from a peer student Moritz .... that did his bachelor thesis on Madagascar | 'data/data/ne_10m_admin_0_countries/'
 
 ## Project Structure
 '''
