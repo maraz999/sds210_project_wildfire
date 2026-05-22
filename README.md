@@ -45,3 +45,4 @@ Where are the most intense wildfires in Madagascar, and does the brightness temp
   - Ecoregions: https://ecoregions.appspot.com
 4. Get a NASA FIRMS API key: https://firms.modaps.eosdis.nasa.gov/
 5. Add your key to an '.env' file in project root for safety
+6. Run notebooks/01_wildfire_project.ipynb
