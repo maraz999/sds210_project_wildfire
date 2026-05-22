@@ -4,24 +4,13 @@ Analyzing active fire detections from NASA FIRMS VIIRS satellite to explore wher
 ## Research Question
 Where are the most intense wildfires in Madagascar, and does the brightness temperature difference together with FRP intensity reveal spatial distribution in fire behaviour?
 
-## Key Variables
-Variable | Meaning
-- FRP (MW) | Fire Radiative Power: total energy (power) released by the fire
-- ΔT (K) | ti4 - ti5: how much hotter the fire is compared to its sorrounding land surface
-- ti 4 | VIIRS band I4: fire brightness temperature
-- ti 5 | VIIRS band I5: background land surface temperature
-
 ## Data Sources
 Dataset | Source | Path  
--Active fire detection from last 2 days (VIIRS SNPP NRT)| [NASA FIRMS API]| fetched via API
+-Active fire detection from last 2 days (VIIRS SNPP NRT)| [NASA FIRMS API] | fetched via API
 
--Country boundaries | [Natural Earth]| 'data/ne_10m_admin_0_countries/'
+-Country boundaries | [Natural Earth] | 'data/ne_10m_admin_0_countries/'
 
--Ecoregions 2017 | from a peer student Moritz Wissmann that did his bachelor thesis on Madagascar | 'data/ MADAGASCAR WILDFIRE INTENSITY ANALYSIS
-Analyzing active fire detections from NASA FIRMS VIIRS satellite to explore where the most intense wildfires occur across the island's 7 ecoregions and using brightness temperature difference (ΔT) and Fire Radiative Power (FRP).
-
-## Research Question
-Where are the most intense wildfires in Madagascar, and does the brightness temperature difference together with FRP intensity reveal spatial distribution in fire behaviour?
+-Ecoregions 2017 | received from peer student Moritz Wissmann | 'data/ecoregions2017_madagascar.gpkg'
 
 ## Key Variables
 Variable | Meaning
@@ -29,14 +18,6 @@ Variable | Meaning
 - ΔT (K) | ti4 - ti5: how much hotter the fire is compared to its sorrounding land surface
 - ti 4 | VIIRS band I4: fire brightness temperature
 - ti 5 | VIIRS band I5: background land surface temperature
-
-## Data Sources
-Dataset | Source | Path  
--Active fire detection from last 2 days (VIIRS SNPP NRT)| [NASA FIRMS API]| fetched via API
-
--Country boundaries | [Natural Earth]| 'data/ne_10m_admin_0_countries/'
-
--Ecoregions 2017 | received from a peer student Moritz Wissmann | 'data/ecoregions2017_madagascar.gpkg'
 
 ## Project Structure
 ```.
@@ -66,5 +47,6 @@ Dataset | Source | Path
 5. Add your key to an '.env' file in project root for safety
 6. Run notebooks/01_wildfire_project.ipynb
 
-##Outputs
-An interactive Folium Map showing active fire detection across Madagascar
+## Outputs
+An interactive Folium Map showing active fire detection across Madagascar.
+Open 'outputs/wildfire_map.html' to see the full map.
