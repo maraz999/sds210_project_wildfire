@@ -48,5 +48,5 @@ Variable | Meaning
 6. Run notebooks/01_wildfire_project.ipynb
 
 ## Outputs
-An interactive Folium Map showing active fire detection across Madagascar.
+An Interactive Folium Map showing active fire detections across Madagascar.
 Open 'outputs/wildfire_map.html' to see the full map.
