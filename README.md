@@ -7,9 +7,9 @@ Where are the most intense wildfires in Madagascar, and does the brightness temp
 ## Key Variables
 #Variable | Meaning
 - FRP (MW) | Fire Radiative Power: total energy (power) released by the fire
-- ΔT (K) | Ti4 - Ti5: how much hotter the fire is compared to its sorrounding land surface
-- Ti 4 | VIIRS band I4: fire brightness temperature
-- Ti5 | VIIRS band I5: background land surface temperature
+- ΔT (K) | ti4 - ti5: how much hotter the fire is compared to its sorrounding land surface
+- ti 4 | VIIRS band I4: fire brightness temperature
+- ti5 | VIIRS band I5: background land surface temperature
 
 ## Data Sources
 #Dataset | Source | Path  
