@@ -1,5 +1,5 @@
 # MADAGASCAR WILDFIRE INTENSITY ANALYSIS
-Analyzing active fire detections from NASA FIRMS VIIRS satellite to explore where the most intense wildfires occur across the island's 7 ecoregions and using brightness temperature difference (ΔT) and Fire Radiative Power (FRP).
+Analyzing active fire detections from NASA FIRMS VIIRS satellite to explore where the most intense wildfires occur across the island's 7 ecoregions using brightness temperature difference (ΔT) and Fire Radiative Power (FRP).
 
 ## Research Question
 Where are the most intense wildfires in Madagascar, and does the brightness temperature difference together with FRP intensity reveal spatial distribution in fire behaviour?
